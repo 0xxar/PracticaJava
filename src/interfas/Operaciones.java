@@ -47,59 +47,67 @@ public abstract class Operaciones {
     public abstract void transacciones();
 
     public void central(){
-
-        System.out.println("");
-        System.out.println("Bienvenido a su Sistema de Banco Central");
-        System.out.println("Por favor ingrese su nombre:\n");
-        setNameUser(sc.nextLine());
-        System.out.println("");
-        System.out.println("");
-
         do{
-            bandera=1;
-            int response =0;
             System.out.println("");
-            System.out.println("Bievenido Sr@ "+getNameUser()+" por favor escoja una de las opciones:");
-            System.out.println("1.Consulta de balance");
-            System.out.println("2.Realizar deposito");
-            System.out.println("3.Realizar retiro");
-            System.out.println("4.Realizar Transferencia");
-            System.out.println("5.Consulta Historial de Transacciones");
-            System.out.println("8.Salir del sistema");
+            System.out.println("Bienvenido a su Sistema de Banco Central");
+            System.out.println("Por favor ingrese su nombre:\n");
+            setNameUser(sc.nextLine());
+            System.out.println("");
+            System.out.println("");
+            if(!getNameUser().equals("")){
 
-            response = sc.nextInt();
+                do{
+                    bandera=1;
+                    int response =0;
+                    System.out.println("");
+                    System.out.println("Bievenido Sr@ "+getNameUser()+" por favor escoja una de las opciones:");
+                    System.out.println("1.Consulta de balance");
+                    System.out.println("2.Realizar deposito");
+                    System.out.println("3.Realizar retiro");
+                    System.out.println("4.Realizar Transferencia");
+                    System.out.println("5.Consulta Historial de Transacciones");
+                    System.out.println("6.Salir del sistema");
 
-            switch (response){
+                    response = sc.nextInt();
 
-                case 1:
-                    Consultas cs = new Consultas();
-                    cs.transacciones();
-                    break;
-                case 2:
-                    Depositos dp = new Depositos();
-                    dp.transacciones();
-                    break;
-                case 3:
-                    Retiros rt = new Retiros();
-                    rt.transacciones();
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    System.out.println("Gracias por visitarnos, vuelva pronto!!");
-                    bandera=6;
-                    break;
-                default:
-                    System.out.println("Opcion escojido de habilitada, por favor vuelva a intentar!!");
-                    bandera =1;
+                    switch (response){
+
+                        case 1:
+                            Consultas cs = new Consultas();
+                            cs.transacciones();
+                            break;
+                        case 2:
+                            Depositos dp = new Depositos();
+                            dp.transacciones();
+                            break;
+                        case 3:
+                            Retiros rt = new Retiros();
+                            rt.transacciones();
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            System.out.println("Gracias por visitarnos, vuelva pronto!!");
+                            bandera=6;
+                            break;
+                        default:
+                            System.out.println("Opcion escojido de habilitada, por favor vuelva a intentar!!");
+                            bandera =1;
+                    }
+
+
+
+
+                }while(bandera !=6);
             }
 
 
+        }while(getNameUser().equals(""));
 
 
-        }while(bandera !=6);
+
 
 
     }
