@@ -44,4 +44,20 @@ public abstract class Operaciones {
     }
 
     public abstract void transacciones();
+
+    public void central(){
+        int bandera =0;
+        System.out.println("");
+        System.out.println("Bienvenido a su Sistema de Banco Central");
+        System.out.println("Por favor ingrese su nombre:\n");
+        setNameUser(sc.nextLine());
+        System.out.println("");
+        System.out.println("");
+
+        do{
+            
+
+
+        }while(bandera !=0);
+    }
 }
