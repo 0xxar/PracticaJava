@@ -65,7 +65,7 @@ public abstract class Operaciones {
             System.out.println("3.Realizar retiro");
             System.out.println("4.Realizar Transferencia");
             System.out.println("5.Consulta Historial de Transacciones");
-            System.out.println("0.Salir del sistema");
+            System.out.println("8.Salir del sistema");
 
             response = sc.nextInt();
 
@@ -76,22 +76,30 @@ public abstract class Operaciones {
                     cs.transacciones();
                     break;
                 case 2:
+                    Depositos dp = new Depositos();
+                    dp.transacciones();
                     break;
                 case 3:
+                    Retiros rt = new Retiros();
+                    rt.transacciones();
                     break;
                 case 4:
                     break;
                 case 5:
                     break;
-                case 0:
-                    bandera=0;
+                case 6:
+                    System.out.println("Gracias por visitarnos, vuelva pronto!!");
+                    bandera=6;
                     break;
+                default:
+                    System.out.println("Opcion escojido de habilitada, por favor vuelva a intentar!!");
+                    bandera =1;
             }
 
 
 
 
-        }while(bandera !=0);
+        }while(bandera !=6);
 
 
     }
@@ -99,7 +107,7 @@ public abstract class Operaciones {
 
         Scanner sc = new Scanner(System.in);
         int response =0;
-        System.out.println("Desea realizar otra acciones?");
+        System.out.println("Desea realizar otra accion?");
         System.out.println("1.Yes");
         System.out.println("0.No");
         response = sc.nextInt();
