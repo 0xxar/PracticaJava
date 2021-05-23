@@ -13,11 +13,11 @@ public class Retiros extends Operaciones {
 
         }else{
             System.out.println("Sr@ "+getNameUser()+" usted a realizado un retiro de su cuenta de B/."+getRetiro());
-
+            System.out.println("");
+            System.out.println("Usted a realizado un retiro de B/."+getRetiro()+" dejando su cuenta con un balance de B/."+getSaldo());
+            RealizarOtraAccion();
 
         }
-        System.out.println("");
-        System.out.println("Usted a realizado un retiro de B/."+getRetiro()+" dejando su cuenta con un balance de B/."+getSaldo());
-        RealizarOtraAccion();
+
     }
 }
