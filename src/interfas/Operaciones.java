@@ -47,13 +47,15 @@ public abstract class Operaciones {
     public abstract void transacciones();
 
     public void central(){
-        do{
-            System.out.println("");
-            System.out.println("Bienvenido a su Sistema de Banco Central");
-            System.out.println("Por favor ingrese su nombre:\n");
-            setNameUser(sc.nextLine());
-            System.out.println("");
-            System.out.println("");
+        bandera=0;
+        System.out.println("");
+        System.out.println("Bienvenido a su Sistema de Banco Central");
+        System.out.println("Por favor ingrese su nombre:\n");
+        setNameUser(sc.nextLine());
+        System.out.println("");
+        System.out.println("");
+
+
             if(!getNameUser().equals("")){
 
                 do{
@@ -70,7 +72,27 @@ public abstract class Operaciones {
 
                     response = sc.nextInt();
 
-                    switch (response){
+                    if(response==1){
+                        Consultas cs = new Consultas();
+                        cs.transacciones();
+                    }else if(response==2){
+                        Depositos dp = new Depositos();
+                        dp.transacciones();
+                    }else if(response ==3){
+                        Retiros rt = new Retiros();
+                        rt.transacciones();
+
+
+                    }else if(response == 5){
+
+                    }else if(response == 6){
+                        System.out.println("Gracias por visitarnos, vuelva pronto!!");
+                        bandera=0;
+
+
+                    }
+
+                   /** switch (response){
 
                         case 1:
                             Consultas cs = new Consultas();
@@ -95,16 +117,19 @@ public abstract class Operaciones {
                         default:
                             System.out.println("Opcion escojido de habilitada, por favor vuelva a intentar!!");
                             bandera =1;
-                    }
+                    }*/
 
 
 
 
-                }while(bandera !=6);
+                }while(bandera !=0);
+            }else{
+
+                System.out.println("Por favor ingrese su nombre para poder avanzar!!");
             }
 
 
-        }while(getNameUser().equals(""));
+
 
 
 
