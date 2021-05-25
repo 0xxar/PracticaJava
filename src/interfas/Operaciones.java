@@ -106,36 +106,6 @@ public abstract class Operaciones {
 
                     }
 
-                   /** switch (response){
-
-                        case 1:
-                            Consultas cs = new Consultas();
-                            cs.transacciones();
-                            break;
-                        case 2:
-                            Depositos dp = new Depositos();
-                            dp.transacciones();
-                            break;
-                        case 3:
-                            Retiros rt = new Retiros();
-                            rt.transacciones();
-                            break;
-                        case 4:
-                            break;
-                        case 5:
-                            break;
-                        case 6:
-                            System.out.println("Gracias por visitarnos, vuelva pronto!!");
-                            bandera=6;
-                            break;
-                        default:
-                            System.out.println("Opcion escojido de habilitada, por favor vuelva a intentar!!");
-                            bandera =1;
-                    }*/
-
-
-
-
                 }while(bandera !=0);
             }else{
 
