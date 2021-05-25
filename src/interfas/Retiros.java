@@ -3,9 +3,10 @@ package interfas;
 public class Retiros extends Operaciones {
     @Override
     public void transacciones() {
+        getSaldo();
         System.out.println("Por favor Sr@ "+getNameUser()+" ingrese el monto a retirar B/.");
         setRetiro(sc.nextDouble());
-        getSaldo();
+
         setSaldo(getSaldo() - getRetiro());
 
         //if(getRetiro() > getSaldo()){ }
