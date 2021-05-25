@@ -56,7 +56,7 @@ public abstract class Operaciones {
         System.out.println("");
 
         do{
-            bandera=1;
+            bandera=0;
             int response =0;
             System.out.println("");
             System.out.println("Bievenido Sr@ "+getNameUser()+" por favor escoja una de las opciones:");
@@ -65,7 +65,7 @@ public abstract class Operaciones {
             System.out.println("3.Realizar retiro");
             System.out.println("4.Realizar Transferencia");
             System.out.println("5.Consulta Historial de Transacciones");
-            System.out.println("8.Salir del sistema");
+            System.out.println("0.Salir del sistema");
 
             response = sc.nextInt();
 
@@ -87,9 +87,9 @@ public abstract class Operaciones {
                     break;
                 case 5:
                     break;
-                case 6:
+                case 0:
                     System.out.println("Gracias por visitarnos, vuelva pronto!!");
-                    bandera=6;
+                    bandera=0;
                     break;
                 default:
                     System.out.println("Opcion escojido de habilitada, por favor vuelva a intentar!!");
@@ -99,7 +99,7 @@ public abstract class Operaciones {
 
 
 
-        }while(bandera !=6);
+        }while(bandera !=0);
 
 
     }
@@ -113,8 +113,9 @@ public abstract class Operaciones {
         response = sc.nextInt();
 
         if(response == 1){
+            bandera=0;
             central();
-            bandera=1;
+
 
         }
         if(response == 0){
