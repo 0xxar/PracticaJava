@@ -46,20 +46,26 @@ public abstract class Operaciones {
 
     public abstract void transacciones();
 
-    public void central(){
-        bandera=0;
+    public void Bienvenida(){
         System.out.println("");
         System.out.println("Bienvenido a su Sistema de Banco Central");
         System.out.println("Por favor ingrese su nombre:\n");
         setNameUser(sc.nextLine());
         System.out.println("");
         System.out.println("");
+        central();
 
+    }
+
+    public void central(){
+
+
+        bandera=0;
 
             if(!getNameUser().equals("")){
 
                 do{
-                    bandera=1;
+
                     int response =0;
                     System.out.println("");
                     System.out.println("Bievenido Sr@ "+getNameUser()+" por favor escoja una de las opciones:");
@@ -126,6 +132,7 @@ public abstract class Operaciones {
             }else{
 
                 System.out.println("Por favor ingrese su nombre para poder avanzar!!");
+                central();
             }
 
 
@@ -147,12 +154,13 @@ public abstract class Operaciones {
 
         if(response == 1){
             central();
-            bandera=1;
+
 
         }
         if(response == 0){
-            central();
-            bandera=0;
+            System.out.println("Gracias por visitarnos,Vuelva pronto!!");
+
+
 
 
         }

@@ -8,7 +8,8 @@ public class CentralOp {
     public static void main(String[] args) {
 
         Operaciones op = new Consultas();
-        op.central();
+        op.Bienvenida();
+
 
     }
 }
