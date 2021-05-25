@@ -103,6 +103,7 @@ public abstract class Operaciones {
                         bandera=0;
 
 
+
                     }
 
                    /** switch (response){
@@ -140,44 +141,50 @@ public abstract class Operaciones {
 
                 System.out.println("Por favor ingrese su nombre para poder avanzar!!");
                 central();
-            }
 
 
 
 
 
+
+        }while(bandera !=0);
 
 
 
     }
-    public void RealizarOtraAccion(){
+    public void RealizarOtraAccion() {
 
         Scanner sc = new Scanner(System.in);
-        int response =0;
+        int response = 0;
         System.out.println("Desea realizar otra accion?");
         System.out.println("1.Yes");
         System.out.println("0.No");
         response = sc.nextInt();
 
-        if(response>=0 && response <=1){
-            if(response == 1){
+
+        if (response >= 0 && response <= 1) {
+            if (response == 1) {
                 central();
 
+                if (response == 1) {
+                    bandera = 0;
+                    central();
+
+
+                }
+                if (response == 0) {
+                    System.out.println("Gracias por visitarnos,Vuelva pronto!!");
+
+                }
+
+
+            } else {
+
+                System.out.println("Opcion escojido no disponible, por favor vuelva a intentar!!");
+                RealizarOtraAccion();
             }
-            if(response == 0){
-                System.out.println("Gracias por visitarnos,Vuelva pronto!!");
-
-            }
 
 
-        }else{
-
-            System.out.println("Opcion escojido no disponible, por favor vuelva a intentar!!");
-            RealizarOtraAccion();
         }
-
-
-
-
     }
 }
