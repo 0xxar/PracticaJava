@@ -53,7 +53,14 @@ public abstract class Operaciones {
         setNameUser(sc.nextLine());
         System.out.println("");
         System.out.println("");
-        central();
+        if(!getNameUser().equals("")){
+            central();
+        }else{
+
+            System.out.println("Por favor ingrese su nombre para poder avanzar!!");
+            Bienvenida();
+        }
+
 
     }
 
@@ -152,18 +159,24 @@ public abstract class Operaciones {
         System.out.println("0.No");
         response = sc.nextInt();
 
-        if(response == 1){
-            central();
+        if(response>=0 && response <=1){
+            if(response == 1){
+                central();
+
+            }
+            if(response == 0){
+                System.out.println("Gracias por visitarnos,Vuelva pronto!!");
+
+            }
 
 
+        }else{
+
+            System.out.println("Opcion escojido no disponible, por favor vuelva a intentar!!");
+            RealizarOtraAccion();
         }
-        if(response == 0){
-            System.out.println("Gracias por visitarnos,Vuelva pronto!!");
 
 
-
-
-        }
 
 
     }
